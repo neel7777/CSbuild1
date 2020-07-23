@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: blue;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Board {  position: relative;  
+  margin: 0 auto;  
+  background-color: #000;
+
+  background-image:linear-gradient(#333 1px, transparent 1px),    
+  linear-gradient(90deg, #333 1px, transparent 1px);
+}
+

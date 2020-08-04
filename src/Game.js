@@ -135,6 +135,7 @@ function Game() {
             //counting number of neighbors
             if (neighbors < 2 || neighbors > 3) {
               gridCopy[i][k] = 0;
+              
             } else if (grid[i][k] === 0 && neighbors === 3) {
               validGrid = true;
               gridCopy[i][k] = 1;
@@ -145,7 +146,7 @@ function Game() {
         if (validGrid) {
           setGeneration((num) => num + 1);
         }
-        
+        //counting total number of cells
         setSum(
             gridCopy.flat().reduce((add, cell)=>{
                 return add + cell;
@@ -266,7 +267,9 @@ function Game() {
                 backgroundColor:
                     grid[i][k] && sum < 100
                     ? "yellow"
-                    : grid[i][k] && sum > 100
+                    :grid[i][k] && sum >= 100 && sum <= 300
+                    ? "blue"
+                    : grid[i][k] && sum > 300
                     ? "red"
                     : undefined,
                 border: "1px solid white",
